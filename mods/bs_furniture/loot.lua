@@ -211,6 +211,12 @@ core.register_node("bs_furniture:crate_1", {
     drawtype = "mesh",
     mesh="furniture_crate_1.obj",
     paramtype2 = "facedir",
+    sounds = {
+    footstep={name = "main_map_tech_soft"},
+    dug = {name = "main_map_tech_hard"},
+    place={name = "main_map_tech_hard"},
+    dig={name = "main_map_tech_break"},
+    },
     stack_max=8,
     selection_box = {
         type = "fixed",

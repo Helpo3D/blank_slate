@@ -12,6 +12,12 @@ core.register_node("bs_items:grinder", {
     description = "Grinder",
     groups={twist=3},
     stack_max = 8,
+    sounds = {
+    footstep={name = "main_map_tech_soft"},
+    dug = {name = "main_map_tech_hard"},
+    place={name = "main_map_tech_hard"},
+    dig={name = "main_map_tech_break"},
+    },
     _blueprint_weight=5,
     _recyle={metal = 10,tech=6},
     tiles = {
@@ -97,6 +103,12 @@ core.register_node("bs_items:creationator", {
     groups={twist=3},
     stack_max = 8,
     paramtype2 = "facedir",
+    sounds = {
+    footstep={name = "main_map_tech_soft"},
+    dug = {name = "main_map_tech_hard"},
+    place={name = "main_map_tech_hard"},
+    dig={name = "main_map_tech_break"},
+    },
     _recyle = { metal = 10,tech=5 },
     _blueprint_weight=5,
     tiles = {"items_createonator_top.png","items_createonator_bottem.png","items_createonator_side.png","items_createonator_side.png","items_createonator_side.png","items_createonator.png"},
@@ -119,6 +131,7 @@ core.register_node("bs_items:creationator", {
                         inv:remove_item("main","bs_items:" .. type .. " " .. amount)
                     end
                     core.add_item({ x = pos.x, y = pos.y + 1, z = pos.z }, item)
+                    core.sound_play("items_create",{pos=pos,max_hear_distance=7})
                 end
             end
         end
@@ -156,7 +169,10 @@ local auto_creationate=function(pos, listname, index, stack, player)
                 for type, amount in pairs(main_map.print_recepies[item]) do
                     local stack=inv:get_stack("main", mat_to_seven[type])
                     stack:take_item(max_print*amount)
-                    inv:set_stack("main", mat_to_seven[type],stack)
+                    inv:set_stack("main", mat_to_seven[type], stack)
+                    if max_print > 0 then
+                        core.sound_play("items_create",{pos=pos,max_hear_distance=7})
+                    end
                 end
             end
         end
@@ -166,6 +182,12 @@ core.register_node("bs_items:auto_creationator", {
     description = "Auto Creationator\ncreates as many of its blueprint as possible",
     groups={twist=3},
     _blueprint_weight=2,
+    sounds = {
+    footstep={name = "main_map_tech_soft"},
+    dug = {name = "main_map_tech_hard"},
+    place={name = "main_map_tech_hard"},
+    dig={name = "main_map_tech_break"},
+    },
     paramtype2 = "facedir",
     stack_max = 8,
     _recyle={metal = 10,tech=20},

@@ -85,6 +85,12 @@ core.register_node("bs_main_map:carpet_red", {
     groups={pry=3,cut=3},
     _recyle={wood=3,cloth=5,colour=1},
     stack_max=128,
+    sounds = {
+        footstep={name = "main_map_soft"},
+        dug = {name = "main_map_soft"},
+        place={name = "main_map_soft"},
+        dig={name = "main_map_soft"},
+    },
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_red_carpet.png"},
 })
@@ -92,6 +98,12 @@ core.register_node("bs_main_map:carpet_yellow", {
     description = "Yellow Carpet",
     groups={pry=3,cut=3},
     _recyle={wood=3,cloth=5,colour=1},
+    sounds = {
+        footstep={name = "main_map_soft"},
+        dug = {name = "main_map_soft"},
+        place={name = "main_map_soft"},
+        dig={name = "main_map_soft"},
+    },
     stack_max=128,
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_yellow_carpet.png"},
@@ -116,6 +128,12 @@ core.register_node("bs_main_map:lamp", {
     description = "lamp",
     groups={pry=3,twist=3},
     stack_max=32,
+    sounds = {
+    footstep={name = "main_map_tech_soft"},
+    dug = {name = "main_map_tech_hard"},
+    place={name = "main_map_tech_hard"},
+    dig={name = "main_map_tech_break"},
+    },
     _recyle={metal=8,tech=4},
     sunlight_propagates = false,
     light_source=14,
