@@ -90,6 +90,12 @@ core.register_node("bs_furniture:cabinet_1", {
     drawtype = "mesh",
     mesh="furniture_cabinet_1.obj",
     paramtype2 = "facedir",
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
     stack_max=8,
     selection_box = {
         type = "fixed",
@@ -145,6 +151,12 @@ core.register_node("bs_furniture:lockbox", {
     groups={twist=1,pickup=2},
     _recyle={metal=2, wood=5},
     sunlight_propagates = true,
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
     drawtype = "nodebox",
     paramtype2 = "facedir",
     stack_max=8,

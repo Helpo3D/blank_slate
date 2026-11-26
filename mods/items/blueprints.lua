@@ -5,12 +5,18 @@ main_map.print_recepies = {
 local total_blue_weight=0
 core.register_node("bs_items:blueprint", {
     description = "Unkown blueprint\nplace to determine",
-    groups={cut=1,pickup=1},
+    groups={pickup=1,attached_node=1},
     sunlight_propagates = true,
     _uncraftable=true,
     stack_max=8,
     _recyle={paper = 3},
     drawtype = "nodebox",
+    sounds = {
+        footstep={name = "items_paper_step"},
+        dug = {name = "items_paper"},
+        place={name = "items_paper"},
+        dig={name = "items_paper"},
+    },
     paramtype2 = "facedir",
     node_box = {
         type = "fixed",
@@ -41,12 +47,15 @@ core.register_node("bs_items:blueprint", {
             if core.registered_items[oldmeta.blueprint].tiles then
                 texture = core.registered_items[oldmeta.blueprint].tiles
             end
-            core.chat_send_all(type(texture))
             if type(texture) == "table" then
                 if type(texture[1]) == "table" then
-                    texture[1]=texture[2]
+                    texture[1] = texture[2]
                 end
+                if type(texture[1])=="string" then
                 texture="([inventorycube{"..texture[1].."{"..texture[(2%#texture)+1].."{"..texture[(3%#texture)+1].."\\^[resize\\:16x16)"
+                else
+                    texture="items_clear.png"
+                end
             end
             texture="[combine:32x32:16,16="..texture
             meta:set_string("inventory_overlay", texture)

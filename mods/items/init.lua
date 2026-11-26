@@ -9,6 +9,12 @@ core.register_node("bs_items:glass",{
     stack_max=128,
     sunlight_propagates = true,
     _recyle = {rock=7 },
+    sounds = {
+        footstep={name = "main_map_hard_soft"},
+        dug = {name = "main_map_hard_loud"},
+        place={name = "main_map_hard_loud"},
+        dig={name = "main_map_hard_soft"},
+    },
     paramtype = "light",
     drawtype="glasslike_framed_optional",
     tiles = {"items_glass.png","items_clear.png"},

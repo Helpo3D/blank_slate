@@ -21,6 +21,12 @@ core.register_node("bs_furniture:chair_1", {
             { -3 / 8, 0, 2 / 8, 3 / 8, 0.5, 3 / 8 },
         }
     },
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
     paramtype = "light",
     tiles = {"furniture_char_1_top.png","furniture_char_1_bottem.png","furniture_char_1_front.png"},
 })

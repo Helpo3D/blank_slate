@@ -11,6 +11,12 @@ core.register_node("bs_main_map:wall_yellow", {
     stack_max=128,
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_yellow_wall.png"},
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
 })
 core.register_node("bs_main_map:wall_red", {
     description = "Red Wall",
@@ -19,6 +25,12 @@ core.register_node("bs_main_map:wall_red", {
     stack_max=128,
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_red_wall.png"},
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
 })
 
 core.register_node("bs_main_map:gray_tile", {
@@ -26,6 +38,12 @@ core.register_node("bs_main_map:gray_tile", {
     _recyle={wood=3,paper=5,colour=1},
     groups={pry=2},
     stack_max=128,
+    sounds = {
+        footstep={name = "main_map_hard_soft"},
+        dug = {name = "main_map_hard_loud"},
+        place={name = "main_map_hard_loud"},
+        dig={name = "main_map_hard_soft"},
+    },
     after_dig_node =main_map.afterdig,
     tiles = {{
            name = "main_map_grey_tile.png",
@@ -37,6 +55,12 @@ core.register_node("bs_main_map:red_tile", {
     description = "Red Tiles",
     groups={pry=3},
     _recyle={colour=1,rock=7},
+    sounds = {
+        footstep={name = "main_map_hard_soft"},
+        dug = {name = "main_map_hard_loud"},
+        place={name = "main_map_hard_loud"},
+        dig={name = "main_map_hard_soft"},
+    },
     stack_max=128,
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_red_tile.png"},
@@ -48,6 +72,12 @@ core.register_node("bs_main_map:brown_tile", {
     stack_max=128,
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_brown_tile.png"},
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
 })
 
 core.register_node("bs_main_map:carpet_red", {
@@ -74,6 +104,12 @@ core.register_node("bs_main_map:detail_brown", {
     stack_max=128,
     after_dig_node =main_map.afterdig,
     tiles = {"main_map_brown_detail.png"},
+    sounds = {
+        footstep={name = "main_map_wood"},
+        dug = {name = "main_map_wood"},
+        place={name = "main_map_wood"},
+        dig={name = "main_map_wood"},
+    },
 })
 
 core.register_node("bs_main_map:lamp", {
