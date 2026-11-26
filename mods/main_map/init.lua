@@ -161,7 +161,6 @@ core.register_node("bs_main_map:root", {
             pos.x=(math.random(0, 1) * 148) - 74
         end
         core.emerge_area({ x = pos.x - 1, y = pos.y - 1, z = pos.z - 1 }, { x = pos.x + 1, y = pos.y + 1, z = pos.z + 1 })
-        core.chat_send_all(core.get_node(pos).name)
         if core.get_node(pos).name ~= "ignore" then
             clicker:set_pos(pos)
             core.chat_send_player(clicker:get_player_name(),"welcome to the dungeon. find loot and steal everything")
@@ -214,14 +213,14 @@ core.register_globalstep(function(dtime)
         regen_short_time = regen_short_time - 60
         regen_time = regen_time + 1
         if regen_time==total_time-5 then
-            core.chat_send_all("five minutes remain before the dungeon resets")
+            core.chat_send_all(core.colorize("#f81212","five minutes remain before the dungeon resets"))
             for index, player in pairs(core.get_connected_players()) do
                 if player:get_pos().y<-100 then
                     core.chat_send_player(player:get_player_name(),core.colorize("#f81212","PROCEED TO 0,0 to extract"))
                 end
             end
         elseif regen_time==total_time-1 then
-            core.chat_send_all("one minute remains before the dungeon resets")
+            core.chat_send_all(core.colorize("#f81212","one minute remains before the dungeon resets"))
             for index, player in pairs(core.get_connected_players()) do
                 if player:get_pos().y<-100 then
                     core.chat_send_player(player:get_player_name(),core.colorize("#f81212","PROCEED TO 0,0 to extract, faliure to do so will result in death"))

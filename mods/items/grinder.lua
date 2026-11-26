@@ -33,7 +33,7 @@ core.register_node("bs_items:grinder", {
             local def = itemstack:get_definition()
             local amount = itemstack:get_count()
             for type, quan in pairs(def._recyle) do
-                core.add_item({ x = pos.x, y = pos.y + 1, z = pos.z }, "items:" .. type .. " " .. (quan * amount))
+                core.add_item({ x = pos.x, y = pos.y + 1, z = pos.z }, "bs_items:" .. type .. " " .. (quan * amount))
             end
             itemstack:take_item(amount)
         end
